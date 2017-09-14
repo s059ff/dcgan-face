@@ -7,7 +7,7 @@ Face in the Wildデータセットを使用したDCGANによる顔画像生成�
 
 ## 実行結果
 訓練画像  
-![](https://github.com/s059ff/dcgan-cartoon/blob/master/sample/real.png)  
+![](https://github.com/s059ff/dcgan-face/blob/master/sample/real.png)  
 Generatorが生成した画像(100エポック)  
-![](https://github.com/s059ff/dcgan-cartoon/blob/master/sample/fake.png)  
+![](https://github.com/s059ff/dcgan-face/blob/master/sample/fake.png)  
 
