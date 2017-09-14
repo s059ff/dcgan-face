@@ -99,3 +99,9 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+## dataset
+dataset/
+
+## training result
+train/
