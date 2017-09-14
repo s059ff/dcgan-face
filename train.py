@@ -19,7 +19,6 @@ from visualize import visualize
 
 # Define constants
 N = 100     # Minibatch size
-M = 30000
 SNAPSHOT_INTERVAL = 10
 REAL_LABEL = 1
 FAKE_LABEL = 0
@@ -56,12 +55,6 @@ def main():
     train = np.load('dataset/faces-in-the-wild.npy').reshape((-1, 3, 64, 64))
     train = np.random.permutation(train)
     validation_z = xp.random.uniform(low=-1.0, high=1.0, size=(100, 100)).astype('f')
-
-    # (Align the number of data)
-    _ = np.zeros((M, 3, 64, 64), dtype='f')
-    for n in range(M):
-        _[n] = train[n % len(train)]
-    train = _
 
     # Create the model
     gen = Generator()
@@ -106,7 +99,7 @@ def main():
         total_loss_dis = 0.0
         total_loss_gen = 0.0
 
-        for n in range(0, M, N):
+        for n in range(0, len(train), N):
 
             ############################
             # (1) Update D network
@@ -136,8 +129,8 @@ def main():
             total_loss_gen += loss_gen.data
 
         # (View loss)
-        total_loss_dis /= M / N
-        total_loss_gen /= M / N
+        total_loss_dis /= len(train) / N
+        total_loss_gen /= len(train) / N
         print(epoch, total_loss_dis, total_loss_gen)
 
 
