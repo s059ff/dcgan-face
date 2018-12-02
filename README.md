@@ -1,4 +1,4 @@
-# dcgan-cartoon
+# dcgan-face
 Face in the Wildデータセットを使用したDCGANによる顔画像生成のテストです。
 
 ## 実行方法
